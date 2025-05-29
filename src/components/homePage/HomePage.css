@@ -1,0 +1,23 @@
+.HomePage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("../../assets//messaging.avif");
+  height: 100vh;
+}
+
+.HomePage div {
+  width: 50%;
+  display: flex;
+  height: 400px;
+  margin: 0 60px;
+}
+
+.HomePage div .welcome-h4 {
+  font-size: 1.9rem;
+  opacity: 0;
+  color: rgb(24, 24, 24)
+  ;
+}
+
+
