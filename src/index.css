@@ -4,6 +4,15 @@ body {
   width: 100dvw;
   height: 100dvh;
   background-color: #1d1d1d;
-  color : #f7e1d7;
-   font-family: "Cabin", sans-serif;
+  color: #f7e1d7;
+  font-family: "Cabin", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+input {
+  outline: none;
 }

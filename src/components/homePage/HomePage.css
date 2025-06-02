@@ -1,23 +1,124 @@
 .HomePage {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-image: url("../../assets//messaging.avif");
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  /* background-image: url("../../assets//message01.avif");
+  background-image: url("../../assets//messaging.avif"); */
+  background-image: url("../../assets//message02.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 100vh;
+  padding: 0 2%;
+  gap: 1;
+  overflow: hidden;
+  background-size: 100% 100%;
 }
 
-.HomePage div {
-  width: 50%;
+.HomePage .welcome-div {
+  width: 60%;
   display: flex;
-  height: 400px;
-  margin: 0 60px;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+}
+
+.HomePage .welcome-div img {
+  width: 80px;
+  height: 80px;
 }
 
 .HomePage div .welcome-h4 {
   font-size: 1.9rem;
   opacity: 0;
-  color: rgb(24, 24, 24)
-  ;
+  color: rgb(24, 24, 24);
+  margin-left: 20px;
 }
 
+.HomePage .forgot-password-div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
 
+.HomePage .forgot-password-para {
+  padding-right: 4px;
+  color: #34636b;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+/*  ***************************  LOGIN SIGNUP FORM *********************** */
+.HomePage .forms-div {
+  width: 360px;
+}
+#googleLogin {
+  margin-bottom: 10px;
+  width: 360px;
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
+}
+
+.HomePage .forms-div form {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomePage .forms-div form .error-para {
+  margin: 0;
+  height: 20px;
+  color: rgb(167, 28, 28);
+}
+
+.HomePage .forms-div form input {
+  height: 40px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.HomePage .forms-div form input[type="text"],
+.HomePage .forms-div form input[type="password"],
+.HomePage .forms-div form input[type="email"] {
+  padding-left: 10px;
+  background-color: rgb(223, 223, 223);
+}
+
+.HomePage .forms-div form input[type="submit"] {
+  background-color: rgb(48, 60, 175);
+  background-color: #5d9be4;
+  background-color: #2c41c6;
+  background-color: #34636b;
+  color: white;
+}
+
+.HomePage .forms-div form .error-input {
+  border: rgb(236, 55, 55) 1px solid;
+}
+
+.HomePage .forms-div p button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #2c4144;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.HomePage .forms-div form .disabled-btn {
+  background-color: rgb(146, 146, 146) !important;
+  color: black !important;
+  font-weight: bold !important;
+}
+
+@media screen and (max-width: 600px) {
+  .HomePage {
+    align-items: center;
+  }
+}
