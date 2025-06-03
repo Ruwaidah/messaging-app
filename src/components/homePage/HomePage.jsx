@@ -39,17 +39,11 @@ const HomePage = () => {
   // ************************ CLICK LOGIN BUTTON ********************
   const clickLoginButton = () => setIsLoginForm(true);
 
-  // if (isAuthLoading)
-  //   return (
-  //     <div>
-  //       <h3>Loading ... </h3>
-  //     </div>
-  //   );
 
   return (
     <div className="HomePage">
       <div className="welcome-div">
-        <img src="https://img.icons8.com/?size=100&id=58562&format=png&color=000000" />
+        <img className="logo-img" src="https://img.icons8.com/?size=100&id=58562&format=png&color=000000" />
         <h4 className="welcome-h4"> Connect </h4>
       </div>
       <div id="googleLogin">

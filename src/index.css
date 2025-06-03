@@ -15,4 +15,9 @@ a {
 
 input {
   outline: none;
+  border: none;
+}
+.logo-img {
+  width: 80px;
+  height: 80px;
 }
