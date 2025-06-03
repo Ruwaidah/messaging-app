@@ -25,10 +25,6 @@
   top: 10px;
 }
 
-.HomePage .welcome-div img {
-  width: 80px;
-  height: 80px;
-}
 
 .HomePage div .welcome-h4 {
   font-size: 1.9rem;
@@ -112,7 +108,7 @@
 }
 
 .HomePage .forms-div form .disabled-btn {
-  background-color: rgb(146, 146, 146) !important;
+  background-color: rgb(168, 168, 168) !important;
   color: black !important;
   font-weight: bold !important;
 }
