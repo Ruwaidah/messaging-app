@@ -1,12 +1,13 @@
 .HomePage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  position: relative;
+  /* position: relative; */
   /* background-image: url("../../assets//message01.avif");
   background-image: url("../../assets//messaging.avif"); */
-  background-image: url("../../assets//message02.avif");
+  /* background-image: url("../../assets//message02.avif"); */
+  background-color: whitesmoke;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -18,19 +19,80 @@
 }
 
 .HomePage .welcome-div {
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 10px;
+  /* position: absolute; */
+  /* top: 10px; */
+  height: 10vh;
 }
-
 
 .HomePage div .welcome-h4 {
   font-size: 1.9rem;
   opacity: 0;
-  color: rgb(24, 24, 24);
+  color: black;
   margin-left: 20px;
+}
+
+.HomePage .section {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  justify-content: space-between;
+}
+
+.HomePage .section .section-auth {
+  width: 400px;
+  margin-top: 200px;
+  
+}
+
+.HomePage .section .img-sections {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+}
+.HomePage .section .img-sections img {
+  width: 12%;
+  height: 24%;
+  position: absolute;
+}
+
+.msg-01 {
+  top: 30%;
+  right: 60%;
+}
+
+.msg-02 {
+  top: 1%;
+  right: 10%;
+}
+
+.msg-03 {
+  top: 60%;
+  right: 80%;
+}
+
+.msg-04 {
+  top: 12%;
+  right: 34%;
+}
+
+.msg-05 {
+  top: 80%;
+  right: 44%;
+}
+
+.msg-06 {
+  top: 48%;
+  right: 20%;
+}
+
+.msg-07 {
+  top: 10%;
+  right: 80%;
 }
 
 .HomePage .forgot-password-div {
@@ -51,11 +113,11 @@
 
 /*  ***************************  LOGIN SIGNUP FORM *********************** */
 .HomePage .forms-div {
-  width: 360px;
+  width: 400px;
 }
 #googleLogin {
   margin-bottom: 10px;
-  width: 360px;
+  width: 400px;
   border-bottom: 1px solid black;
   padding-bottom: 15px;
 }
@@ -73,10 +135,11 @@
 
 .HomePage .forms-div form input {
   height: 40px;
-  margin-top: 4px;
+  margin-top: 6px;
   border: none;
   border-radius: 4px;
   box-sizing: border-box;
+  /* width: 100%; */
 }
 
 .HomePage .forms-div form input[type="text"],
@@ -98,6 +161,10 @@
   border: rgb(236, 55, 55) 1px solid;
 }
 
+.HomePage .forms-div p {
+  color: black;
+}
+
 .HomePage .forms-div p button {
   background-color: transparent;
   outline: none;
@@ -105,6 +172,8 @@
   color: #2c4144;
   font-weight: bold;
   cursor: pointer;
+  font-size: 0.9rem;
+  padding-left: 0;
 }
 
 .HomePage .forms-div form .disabled-btn {
@@ -113,8 +182,71 @@
   font-weight: bold !important;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+  .HomePage .section .img-sections img {
+    width: 14%;
+    height: 18%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .HomePage div .welcome-h4 {
+    font-size: 1.6rem;
+  }
+
+  .HomePage .section {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .HomePage .section .img-sections {
+    height: 34vh;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .HomePage .section .section-auth {
+    margin: 0;
+    height: 50vh;
+    margin-top: 20px;
+  }
+
+  .HomePage .section .img-sections img {
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .HomePage .welcome-div {
+    width: 100%;
+    justify-content: center;
+  }
+  .HomePage .section .section-auth {
+    margin: 0;
+    height: 50vh;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .HomePage .forms-div {
+    width: 100%;
+  }
+
+  #googleLogin {
+    width: 100%;
+  }
+
+  .HomePage .section .img-sections img {
+    width: 16%;
+    height: 26%;
+  }
+}
+
+/* @media screen and (max-width: 600px) {
   .HomePage {
     align-items: center;
   }
-}
+} */

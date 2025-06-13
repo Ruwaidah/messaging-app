@@ -1,11 +1,17 @@
+import { Link } from "react-router-dom";
 import "./ResetPassword.css";
 
 import { useForm } from "react-hook-form";
 
 const ResetPassword = () => {
-  const { handleSubmit, register, watch, reset } = useForm();
+  const { handleSubmit, register, watch, reset, formState } = useForm();
+  const { errors } = formState;
 
-  const onSubmit = () => {};
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  console.log(errors);
   return (
     <div className="ResetPassword-component">
       <div className="header-div">
@@ -27,6 +33,7 @@ const ResetPassword = () => {
           <input
             type="email"
             placeholder="Email"
+            className={errors && errors.email ? "error-input" : null}
             {...register("email", {
               required: true,
               pattern: {
@@ -42,6 +49,7 @@ const ResetPassword = () => {
             disabled={watch("email") === "" ? "disabled" : ""}
             value="Submit"
           />
+          <Link to="/">Cancel</Link>
         </form>
       </div>
     </div>
