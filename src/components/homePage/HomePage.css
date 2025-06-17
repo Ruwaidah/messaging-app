@@ -44,7 +44,6 @@
 .HomePage .section .section-auth {
   width: 400px;
   margin-top: 200px;
-  
 }
 
 .HomePage .section .img-sections {
@@ -52,7 +51,6 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-
 }
 .HomePage .section .img-sections img {
   width: 12%;

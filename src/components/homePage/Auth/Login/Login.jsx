@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { loginUser } from "../../../../reducers/usersSlice";
 import { useState } from "react";
 
@@ -6,11 +7,13 @@ const Login = () => {
   const { register, handleSubmit, formState, reset, watch } = useForm();
   const { errors } = formState;
   const [isDisabled, setIsDisabled] = useState(false);
+  const dispatch = useDispatch();
 
-  const onSubmit = () => {};
+  const onSubmit = (data) => {
+    console.log(data);
+    dispatch(loginUser(data));
+  };
   console.log(errors);
-  console.log(watch());
-  console.log(watch("text") === "", watch("password") === "");
   return (
     <form className="Login-Component" onSubmit={handleSubmit(onSubmit)}>
       <p className="error-para">{errors && errors.text ? "Require !" : null}</p>

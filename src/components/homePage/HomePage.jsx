@@ -14,7 +14,7 @@ const HomePage = () => {
     (state) => state.user
   );
   const [isLoginForm, setIsLoginForm] = useState(true);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();0
 
   useGSAP(() => {
     gsap.to(".welcome-h4", {
@@ -32,6 +32,7 @@ const HomePage = () => {
   const errorLoginGoogle = (data) => {
     console.log(data);
   };
+  console.log(isAuthError)
 
   // ************************ CLICK SIGNUP BUTTON ********************
   const createAccount = () => setIsLoginForm(false);
@@ -77,20 +78,20 @@ const HomePage = () => {
             <div className="signup-div forms-div">
               <SignUp />
               <p>
-                Already have account{" "}
+                Already have account?{" "}
                 <button onClick={clickLoginButton}>Login</button>
               </p>
             </div>
           )}
         </div>
         <div className="img-sections">
-          <img src="../src/assets/msg-01.png" className="msg-01"/>
-          <img src="../src/assets/msg-02.png" className="msg-02"/>
-          <img src="../src/assets/msg-03.png" className="msg-03"/>
-          <img src="../src/assets/msg-04.png" className="msg-04"/>
-          <img src="../src/assets/msg-05.png" className="msg-05"/>
-          <img src="../src/assets/msg-06.png" className="msg-06"/>
-          <img src="../src/assets/msg-07.png" className="msg-07"/>
+          <img src="../src/assets/msg-01.png" className="msg-01" />
+          <img src="../src/assets/msg-02.png" className="msg-02" />
+          <img src="../src/assets/msg-03.png" className="msg-03" />
+          <img src="../src/assets/msg-04.png" className="msg-04" />
+          <img src="../src/assets/msg-05.png" className="msg-05" />
+          <img src="../src/assets/msg-06.png" className="msg-06" />
+          <img src="../src/assets/msg-07.png" className="msg-07" />
         </div>
       </div>
     </div>

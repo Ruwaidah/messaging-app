@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { socket } from "../socket.jsx";
 
 const initialState = {
   isAuthLoading: false,
@@ -60,6 +61,31 @@ const usersSlice = createSlice({
       state.errorMessage = action.payload;
       state.user = null;
       state.isAuthError = true;
+    });
+
+    // ************************** LOGIN AUTH ******************************
+    builder.addCase(loginUser.pending, (state) => {
+      state.isAuthError = false;
+      state.errorMessage = null;
+      state.isAuthError = false;
+      state.isAuthLoading = true;
+      state.user = null;
+    });
+
+    builder.addCase(loginUser.fulfilled, (state, action) => {
+      localStorage.setItem("token", action.payload.token);
+      localStorage.setItem("type", action.payload.type);
+      localStorage.setItem("id", action.payload.id);
+      state.isAuthError = false;
+      state.errorMessage = null;
+      state.isAuthLoading = false;
+      state.user = action.payload;
+    });
+    builder.addCase(loginUser.rejected, (state, action) => {
+      state.isAuthError = true;
+      state.isAuthLoading = false;
+      state.errorMessage = action.payload;
+      state.user = null;
     });
   },
 });
