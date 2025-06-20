@@ -1,25 +1,50 @@
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../../../reducers/usersSlice";
 import { useState } from "react";
 
 const Login = () => {
+  const { isAuthLoading, isAuthError, errorMessage } = useSelector(
+    (state) => state.user
+  );
   const { register, handleSubmit, formState, reset, watch } = useForm();
   const { errors } = formState;
   const [isDisabled, setIsDisabled] = useState(false);
+  const dispatch = useDispatch();
 
-  const onSubmit = () => {};
-  console.log(errors);
-  console.log(watch());
-  console.log(watch("text") === "", watch("password") === "");
+  const onSubmit = (data) => {
+    console.log(data);
+    return dispatch(loginUser(data));
+  };
+  console.log(isAuthLoading);
   return (
     <form className="Login-Component" onSubmit={handleSubmit(onSubmit)}>
-      <p className="error-para">{errors && errors.text ? "Require !" : null}</p>
+      {/* <p className="error-para">{errors && errors.text ? "Require !" : null}</p> */}
+
+      <p className="error-request-p">
+        {" "}
+        {errors.text || errors.password
+          ? "Invalid Input"
+          : isAuthError
+          ? errorMessage
+          : isAuthLoading
+          ? "Loading ..."
+          : null}
+      </p>
+
       <input
         placeholder="Email/Username"
         type="text"
         className={errors.text ? "error-input" : null}
         {...register("text", {
-          required: true,
+          required: {
+            value: true,
+            message: "Require",
+          },
+          minLength: {
+            value: 4,
+            message: "UserName is too Short",
+          },
         })}
       />
       <input
@@ -34,14 +59,12 @@ const Login = () => {
         type="submit"
         value="Login"
         className={
-          (watch("text") === "") | (watch("password") === "")
+          (watch("text") === "") ||  (watch("password") === "" || isAuthLoading )
             ? "disabled-btn"
             : null
         }
         disabled={
-          watch("text") === ""
-            ? "disabled"
-            : watch("password") === ""
+          watch("text") === "" || isAuthLoading || watch("password") === ""
             ? "disabled"
             : ""
         }
