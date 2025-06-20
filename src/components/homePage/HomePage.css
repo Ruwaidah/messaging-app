@@ -113,22 +113,22 @@
 .HomePage .forms-div {
   width: 400px;
 }
+ .HomePage .section-auth .error-request-p {
+  margin: 0;
+  height: 20px;
+  color: rgb(167, 28, 28);
+}
+
 #googleLogin {
   margin-bottom: 10px;
   width: 400px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
   padding-bottom: 15px;
 }
 
 .HomePage .forms-div form {
   display: flex;
   flex-direction: column;
-}
-
-.HomePage .forms-div form .error-para {
-  margin: 0;
-  height: 20px;
-  color: rgb(167, 28, 28);
 }
 
 .HomePage .forms-div form input {

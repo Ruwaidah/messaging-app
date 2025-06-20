@@ -14,7 +14,7 @@ const HomePage = () => {
     (state) => state.user
   );
   const [isLoginForm, setIsLoginForm] = useState(true);
-  const dispatch = useDispatch();0
+  const dispatch = useDispatch();
 
   useGSAP(() => {
     gsap.to(".welcome-h4", {
@@ -26,13 +26,13 @@ const HomePage = () => {
 
   const loginwithGoogle = (data) => {
     console.log(data);
-    dispatch(loginWithGoogle(data));
+    // dispatch(loginWithGoogle(data));
   };
 
   const errorLoginGoogle = (data) => {
     console.log(data);
   };
-  console.log(isAuthError)
+  console.log(isAuthError);
 
   // ************************ CLICK SIGNUP BUTTON ********************
   const createAccount = () => setIsLoginForm(false);
@@ -59,9 +59,12 @@ const HomePage = () => {
               onError={errorLoginGoogle}
             />
           </div>{" "}
-          {isAuthLoading ? (
-            <h4>Loading ...</h4>
-          ) : isLoginForm ? (
+          {/* <div>
+            <p className="error-request-p">
+              {isAuthError ? errorMessage : null}
+            </p>
+          </div> */}
+          {isLoginForm ? (
             <div className="login-div forms-div">
               <Login />
               <div className="forgot-password-div">
