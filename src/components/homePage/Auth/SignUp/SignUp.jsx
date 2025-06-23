@@ -4,7 +4,9 @@ const SignUp = () => {
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  const onSubmit = () => {};
+  const onSubmit = (data) => {
+    console.log(data)
+  };
   console.log(errors);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

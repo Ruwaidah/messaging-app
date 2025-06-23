@@ -59,7 +59,7 @@ const Login = () => {
         type="submit"
         value="Login"
         className={
-          (watch("text") === "") ||  (watch("password") === "" || isAuthLoading )
+          watch("text") === "" || watch("password") === "" || isAuthLoading
             ? "disabled-btn"
             : null
         }
