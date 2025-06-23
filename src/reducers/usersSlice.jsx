@@ -49,7 +49,7 @@ const usersSlice = createSlice({
     builder.addCase(loginWithGoogle.fulfilled, (state, action) => {
       console.log(action.payload);
       localStorage.setItem("token", action.payload.token);
-      localStorage.setItem("type", action.payload.type);
+      // localStorage.setItem("type", action.payload.type);
       localStorage.setItem("id", action.payload.id);
       state.isAuthLoading = false;
       state.user = action.payload;
@@ -74,8 +74,9 @@ const usersSlice = createSlice({
 
     builder.addCase(loginUser.fulfilled, (state, action) => {
       localStorage.setItem("token", action.payload.token);
-      localStorage.setItem("type", action.payload.type);
+      // localStorage.setItem("type", action.payload.type);
       localStorage.setItem("id", action.payload.id);
+      console.log(action.payload)
       state.isAuthError = false;
       state.errorMessage = null;
       state.isAuthLoading = false;

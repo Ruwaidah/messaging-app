@@ -47,7 +47,11 @@ const HomePage = () => {
           className="logo-img"
           src="https://img.icons8.com/?size=100&id=58562&format=png&color=000000"
         /> */}
-        <img src="../src/assets/logo-msg.png" />
+        {/* <img src="../src/assets/logo-msg.png" /> */}
+        <img
+          className="logo-img"
+          src="https://img.icons8.com/?size=100&id=58562&format=png&color=000000"
+        />
         <h4 className="welcome-h4"> Connect </h4>
       </div>
       <div className="section">
@@ -59,11 +63,6 @@ const HomePage = () => {
               onError={errorLoginGoogle}
             />
           </div>{" "}
-          {/* <div>
-            <p className="error-request-p">
-              {isAuthError ? errorMessage : null}
-            </p>
-          </div> */}
           {isLoginForm ? (
             <div className="login-div forms-div">
               <Login />
