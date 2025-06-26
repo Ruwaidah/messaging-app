@@ -5,11 +5,21 @@ const SignUp = () => {
   const { errors } = formState;
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
   };
-  console.log(errors);
+  console.log(localStorage.getItem("token"));
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      {errors && errors.password ? (
+        <div className="error-p">
+          <p className="password-rule-p"> Password Must Have:</p>
+          <ul className="password-rule">
+            <li>at least 8 characters .</li>
+            <li>at least one number.</li>
+            <li>at least one one uppercase and lowercase letter.</li>
+          </ul>
+        </div>
+      ) : null}
       <input
         placeholder="First Name"
         type="text"
