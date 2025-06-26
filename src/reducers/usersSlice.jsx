@@ -38,7 +38,15 @@ export const loginUser = createAsyncThunk(
 const usersSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.clear();
+      state.isAuthLoading = false;
+      state.isAuthError = false;
+      state.errorMessage = null;
+      state.user = null;
+    },
+  },
   extraReducers: (builder) => {
     // ************************** LOGIN AUTH WITH GOOGLE ******************************
     builder.addCase(loginWithGoogle.pending, (state) => {
@@ -76,7 +84,7 @@ const usersSlice = createSlice({
       localStorage.setItem("token", action.payload.token);
       // localStorage.setItem("type", action.payload.type);
       localStorage.setItem("id", action.payload.id);
-      console.log(action.payload)
+      console.log(action.payload);
       state.isAuthError = false;
       state.errorMessage = null;
       state.isAuthLoading = false;
@@ -90,5 +98,7 @@ const usersSlice = createSlice({
     });
   },
 });
+
+export const { logout } = usersSlice.actions;
 
 export default usersSlice.reducer;
