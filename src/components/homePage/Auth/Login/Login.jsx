@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 import { loginUser } from "../../../../reducers/usersSlice";
 import { useState } from "react";
 
@@ -16,7 +17,8 @@ const Login = () => {
     console.log(data);
     return dispatch(loginUser(data));
   };
-  console.log(isAuthLoading);
+
+  if (localStorage.getItem("token")) return <Navigate to="/dashboard" />;
   return (
     <form className="Login-Component" onSubmit={handleSubmit(onSubmit)}>
       {/* <p className="error-para">{errors && errors.text ? "Require !" : null}</p> */}
